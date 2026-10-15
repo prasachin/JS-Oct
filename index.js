@@ -117,15 +117,70 @@
 //   console.log(a[i] + " is value at index " + i);
 //   i++;
 // } while (i < a.length);
-let a = [10, 20, "sachin", true];
-function callMe(value, index) {
-//   console.log(value + " is value at index " + index);
-return value;   
-}
+// let a = [10, 20, 21, 79];
+// function callMe(accumulatedValue, currValue) {
+//   // console.log(value + " is value at index " + index);
+//   // return value;
+//   //   let flag = value % 2 !== 0;
+//   //   console.log(flag);
+//   //   return flag;
+//   let result  = accumulatedValue + currValue;
+//   return result;
+// }
 
-let resForeach = a.forEach(callMe);
-let resMap = a.map(callMe);
-// a.filter(callMe);
-// a.reduce(callMe);
-console.log(resForeach);
-console.log(resMap);
+// // let resForeach = a.forEach(callMe);
+// // let resMap = a.map(callMe);
+// // let resFilter = a.filter(callMe);
+// let resReduce = a.reduce(callMe, 0);
+// // console.log(resForeach);
+// // console.log(resMap);
+// // console.log(resFilter);
+// console.log(resReduce);
+
+// let str = "Rohit";
+// let str1 = "rohit";
+// let str2 = `rohit`;
+// let str3 = new String("rohit");
+
+// let user = { name: "Rohit" };
+
+// console.log("My name is user.name");
+// console.log(`My name is ${user.name}`);
+
+// console.log(typeof str3);
+// console.log(str3);
+
+// let str = "rohit";
+// str[0] = 'R';
+// str = str.charAt(0).toUpperCase() + str.slice(1);
+// // console.log(str.slice(-1));
+// console.log(str);
+
+// let sentance = "i am sentance and I am beautiful";
+
+// let res = "";
+// for (let i = 0; i < sentance.length; i++) {
+//   let word = "";
+//   let j = i;
+//   while (j < sentance.length && sentance[j] !== " ") {
+//     word += sentance[j];
+//     j++;
+//   }
+//   word = word.charAt(0).toUpperCase() + word.slice(1);
+// //   console.log(word);
+//   res += word + " ";
+//   i = j;
+// }
+
+// console.log(res);
+// let sentance = "i am sentance and I am beautiful";
+// let words = sentance.split(" ");
+// // console.log(words);
+
+// for (let i = 0; i < words.length; i++) {
+//   let word = words[i];
+//   word = word.charAt(0).toUpperCase() + word.slice(1);
+//   words[i] = word;
+// }
+// sentance = words.join(" ");
+// console.log(sentance);
