@@ -184,3 +184,85 @@
 // }
 // sentance = words.join(" ");
 // console.log(sentance);
+
+// let obj = {};
+// let obj = new Object();
+// function Student(name, age, city) {
+//   this.class = "10th";
+//   this.name = name;
+//   this.age = age;
+//   this.city = city;
+// }
+
+// class Student {
+//   constructor(name, age, city) {
+//     this.class = "10th";
+//     this.name = name;
+//     this.age = age;
+//     this.city = city;
+//   }
+// }
+
+// let student1 = new Student("Rohit", 20, "Delhi");
+// let student2 = new Student("Sachin", 21, "Mumbai");
+// let student3 = new Student("Virat", 22, "Chennai");
+
+// console.log(student1);
+// console.log(student2);
+// console.log(student3);
+
+// let obj = {name: "Rohit", age: 20, city: "Delhi", password: "123456"};
+// console.log(obj.name);
+// console.log(obj["name"]);
+// let obj = {};
+
+// obj.name = "Rohit";
+// obj["age"] = 20;
+// console.log(obj);
+// delete obj.age;
+// console.log(obj);
+
+// console.log(obj.password);
+// console.log(Object.keys(obj));
+// let obj = { name: "Rohit", age: 20, city: "Delhi" };
+
+// console.log(Object.getOwnPropertyDescriptor(obj, "password"));
+// // obj.password = "newpassword";
+// delete obj.password;
+// console.log(obj);
+// console.log(Object.keys(obj));
+// let obj = { name: "Rohit", age: 20, city: "Delhi" };
+
+// Object.defineProperty(obj, "password", {
+//   value: "123456",
+//   writable: true,
+//   enumerable: true,
+//   configurable: false,
+// });
+
+// console.log(obj);
+// obj.password = "newpassword";
+// delete obj.password;
+// console.log(obj);
+//  console.log(Object.keys(obj));
+// console.log(Object.getOwnPropertyDescriptor(obj, "password"));
+// let obj = { name: "Rohit", age: 20, city: "Delhi", paassword: "123456" };
+
+// Object.freeze(obj);
+// Object.seal(obj);
+
+// console.log(obj);
+// obj.paassword = "newpassword";
+// obj.hobby = "cricket";
+// delete obj.paassword;
+// console.log(obj);
+
+// let animal = { hasTail: true };
+// let dog = Object.create(animal);
+// let cat = Object.create(animal);
+// dog.IsBarks = true;
+// console.log(dog);
+
+// console.log(dog.hasTail);
+// console.log(cat.hasTail);
+// console.log(Object.getPrototypeOf(dog));
