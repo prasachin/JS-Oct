@@ -266,3 +266,50 @@
 // console.log(dog.hasTail);
 // console.log(cat.hasTail);
 // console.log(Object.getPrototypeOf(dog));
+
+// let parent = { x: 10 };
+// let child = Object.create(parent);
+// child.x = 20;
+// // console.log(Object.getPrototypeOf(child));
+// console.log(child.x);
+// // console.log(parent.x);
+
+// let userData = {};
+
+// userData.name = "Rohit";
+// userData.age = 20;
+// userData.city = "Delhi";
+// userData.email = "test@example.com";
+
+// console.log(userData.name);
+
+// userData = JSON.stringify(userData);
+
+// console.log(userData.name);
+
+// userData = JSON.parse(userData);
+
+// console.log(userData.name);
+
+// let obj = {
+//   name: "Rohit",
+//   age: 20,
+//   //   greet: function () {
+//   //     console.log("Hello");
+//   //   },
+//   //   x: undefined,
+// };
+
+// Object.defineProperty(obj, "password", {
+//   value: "123456",
+//   writable: true,
+//   enumerable: true,
+//   configurable: true,
+// });
+
+// obj.self = obj;
+
+// console.log(obj);
+// obj = JSON.stringify(obj);
+// obj = JSON.parse(obj);
+// console.log(obj);

@@ -1,0 +1,8 @@
+{
+  "users": [
+    { "name": "Rohit", "age": 20, "city": "Delhi" },
+    { "name": "Rohit", "age": 20, "city": "Delhi" },
+    { "name": "Rohit", "age": 20, "city": "Delhi" },
+    { "name": "Rohit", "age": 20, "city": "Delhi" }
+  ]
+}
