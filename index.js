@@ -313,3 +313,47 @@
 // obj = JSON.stringify(obj);
 // obj = JSON.parse(obj);
 // console.log(obj);
+
+// let el = document.getElementById("title");
+// let els = document.getElementsByClassName("bold");
+
+// els.forEach((el) => {
+//   console.log(el);
+// });
+
+// let els = document.getElementsByTagName("h1");
+
+// let el = document.querySelector("#title");
+// let els = document.querySelectorAll(".bold");
+// els.forEach((el) => {
+//   console.log(el);
+// });
+
+// el.innerText = "Hello JS";
+// el.innerHTML = "<h1>Hello Welcome to JS</h1>";
+// el.textContent = "Hello JS";
+// console.log(el);
+// let el = document.querySelector("#title");
+// console.log(el);
+
+// el.setAttribute("class", "New_class");
+
+// // console.log(el.getAttribute("class"));
+// let elm = document.querySelector(".New_class");
+// console.log(elm);
+// elm.removeAttribute("class");
+
+// let el = document.querySelector("#title");
+
+// console.log(el);
+// let el = document.querySelector("#title");
+// el.style.fontSize = "125px";
+
+// let el = document.createElement("li");
+// el.textContent = "Hello JS";
+// el.style.color = "red";
+
+// let par = document.querySelector("#list");
+
+// par.appendChild(el);
+// console.log(el);
