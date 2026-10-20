@@ -357,3 +357,49 @@
 
 // par.appendChild(el);
 // console.log(el);
+
+// function callMe(e) {
+//   //   console.log("I am called !");
+//   //   console.log(e.target.value);
+// //   e.target.style.color = "red";
+// //   e.target.style.fontSize = "50px";
+// //   e.target.style.backgroundColor = "yellow";
+//     // e.preventDefault();
+//     // console.log(e.type);
+//     // e.stopPropagation();
+// }
+
+// let title = document.getElementById("title");
+// // console.log(title);
+// title.addEventListener("click", callMe, true);
+
+// let list = document.getElementById("list");
+// // console.log(list);
+// list.addEventListener(
+//   "click",
+//   function (e) {
+//     // console.log(e.target);
+//     if (e.target.matches("li")) {
+//       e.target.style.color = "red";
+//     }
+//   },
+//   true,
+// );
+
+// for (let i = 0; i < 1000; i++) {
+//   let el = document.createElement("div");
+//   el.textContent = "Hello JS " + i;
+//   el.style.color = "red";
+//   document.body.appendChild(el);
+// }
+
+// let fragment = document.createDocumentFragment();
+
+// for (let i = 0; i < 1000; i++) {
+//   let el = document.createElement("div");
+//   el.textContent = "Hello JS " + i;
+//   el.style.color = "red";
+//   fragment.appendChild(el);
+// }
+
+// document.body.appendChild(fragment);
