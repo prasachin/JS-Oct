@@ -1,0 +1,61 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+
+.toolbar {
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-bottom: 1px solid #ccc;
+}
+
+.toolbar button {
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.formula-bar {
+    display: flex;
+    padding: 5px;
+    border-bottom: 1px solid #ccc;
+}
+
+#address {
+    width: 80px;
+    margin-right: 10px;
+}
+
+#formula-input {
+    flex: 1;
+    padding: 5px;
+}
+
+.grid-container {
+    display: grid;
+}
+
+.top-row {
+    grid-column: 2;
+    display: flex;
+}
+
+.left-col {
+    grid-row: 2;
+}
+
+.cells {
+    grid-column: 2;
+    grid-row: 2;
+    overflow: auto;
+}
+
+.cell {
+    width: 80px;
+    height: 20px;
+    border: 1px solid #ccc;
+    padding: 5px;
+}
+
+.row{
+    display: flex;
+}

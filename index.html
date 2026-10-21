@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <h1 id="title" class="bold">Javascript</h1>
+    <!-- <h1 id="title" class="bold">Javascript</h1>
     <h1 id="title1" class="bold">Javascript1</h1>
     <h1 id="title2" class="bold">Javascript2</h1>
     <p>This is a simple Javascript example.</p>
@@ -16,8 +16,28 @@
       <li>Item 2</li>
       <li>Item 3</li>
       <p>This is a paragraph inside the list.</p>
-    </ul>
+    </ul> -->
     <!-- <form action=""></form> -->
-    <script src="index.js"></script>
+    <!-- Toolbar section -->
+    <div class="toolbar">
+      <button id="bold">Bold</button>
+      <button id="italic">Italic</button>
+      <button id="underline">Underline</button>
+      <button id="clear">Clear</button>
+    </div>
+
+    <!-- Formula bar section -->
+    <div class="formula-bar">
+      <input type="text" id="address" disabled />
+      <input type="text" id="formula-input" placeholder="Enter formula here" />
+    </div>
+
+    <!-- Grid section -->
+    <div class="grid-container">
+      <div class="top-row"></div>
+      <div class="left-col"></div>
+      <div class="cells"></div>
+    </div>
+    <script src="./googleSheet.js"></script>
   </body>
 </html>
