@@ -23,6 +23,8 @@ body {
 #address {
     width: 80px;
     margin-right: 10px;
+    text-align: center;
+    font-weight: bold;
 }
 
 #formula-input {
@@ -56,6 +58,6 @@ body {
     padding: 5px;
 }
 
-.row{
+.row {
     display: flex;
 }
