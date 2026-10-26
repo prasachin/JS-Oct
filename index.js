@@ -403,3 +403,56 @@
 // }
 
 // document.body.appendChild(fragment);
+
+// function task1() {
+//   let start = Date.now();
+//   while (Date.now() - start < 5000) {}
+//   console.log("Task 1 completed");
+// }
+
+// function task2() {
+//   let start = Date.now();
+//   while (Date.now() - start < 2000) {}
+//   console.log("Task 2 completed");
+// }
+
+// function task1() {
+//   let start = Date.now();
+//   setTimeout(() => {
+//     console.log("Task 1 completed");
+//   }, 5000);
+// }
+
+// function task2() {
+//   let start = Date.now();
+//   setTimeout(() => {
+//     console.log("Task 2 completed");
+//   }, 2000);
+// }
+
+// task1();
+// task2();
+
+// function callMe() {
+//   console.log("I am called !");
+// }
+
+// function parentFunc(callMe) {
+//   callMe();
+// }
+
+// parentFunc(callMe);
+
+// setTimeout(callMe, 5000);
+
+// let users = getUsers(); // 5sec
+// let orders = getOrders(users[0]); // 3sec
+// let payments = getPayments(orders); // 2sec
+
+// getUsers(function (users) {
+//   getOrders(users[0], function () {
+//     let payments = getPayments(orders, function () {
+//       console.log("All data fetched: ", payments);
+//     });
+//   });
+// });
