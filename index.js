@@ -456,3 +456,58 @@
 //     });
 //   });
 // });
+// console.log(1);
+// let users = fetch("https://jsonplaceholder.typicode.com/users");
+// console.log(users);
+// let output = users.then((data) => {
+// //   console.log(data);
+// //   let result = data.json();
+// //     console.log(result);
+// //   result.then((data) => {
+// //     console.log(data);
+// //   });
+// // return "name";
+// });
+// console.log(output);
+// console.log(2);
+
+// let users = getUsers(); // 5sec
+// let orders = getOrders(users[0]); // 3sec
+// let payments = getPayments(orders); // 2sec
+
+// let users = getUsers();
+
+// let orders = users.then((results) => {
+//   return getOrders(results[0]);
+// });
+// let payments = orders.then((orders) => {
+//   return getPayments(orders);
+// });
+// payments.then((totalPayments) => {
+//   console.log("All data fetched: ", totalPayments);
+// });
+
+// let users = fetch("https://jsonplaceholder.typicode.com/users");
+// console.log(users);
+// let p2 = new Promise((resolve, reject) => {
+//   //   let res = "I got the data";
+//   //   let err = "I got the error";
+//   //   resolve(res);
+//   resolve("I got the data");
+// });
+
+// let p1 = new Promise((resolve, reject) => {
+// //   let res = "I got the data";
+// //   let err = "I got the error";
+//   //   resolve(res);
+//   resolve(p2);
+// });
+
+// console.log(p2);
+// console.log(p1);
+
+// p1.then((data) => {
+//   console.log(data);
+// }).catch((err) => {
+//   console.log(err);
+// });
