@@ -511,3 +511,151 @@
 // }).catch((err) => {
 //   console.log(err);
 // });
+// let start = Date.now();
+
+// let p3 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     // resolve("Promise 3 resolved");
+//     reject("Promise 3 rejected");
+//     // console.log("promise 3 resolved");
+//     // console.log("Time taken by 3rd promise: ", Date.now() - start);
+//   }, 5000);
+// });
+
+// let p2 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     reject("Promise 2 rejected");
+//     // resolve("Promise 2 resolved");
+//     // console.log("promise 2 resolved");
+//     // console.log("Time taken by 2nd promise: ", Date.now() - start);
+//   }, 3000);
+// });
+
+// let p1 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     // resolve("Promise 1 resolved");
+//     reject("Promise 1 rejected");
+//     // console.log("promise 1 resolved");
+//     // console.log("Time taken by 1st promise: ", Date.now() - start);
+//   }, 1000);
+// });
+
+// p2.then(() => {
+//   console.log("Promise 2 resolved");
+// }).catch((err) => {
+//   console.log(err);
+// });
+
+// console.log("End");
+
+// Promise.all([p1, p2, p3])
+//   .then((data) => {
+//     console.log("All promises resolved: ", data);
+//     console.log("Time taken by all promises: ", Date.now() - start);
+//   })
+//   .catch((err) => {
+//     console.log("Error occurred: ", err);
+//   });
+
+// Promise.allSettled([p1, p2, p3])
+//   .then((data) => {
+//     console.log("All promises resolved: ", data);
+//     console.log("Time taken by all promises: ", Date.now() - start);
+//   })
+//   .catch((err) => {
+//     console.log("Error occurred: ", err);
+//   });
+
+// Promise.race([p1, p2, p3])
+//   .then((data) => {
+//     console.log("First settled promise: ", data);
+//     console.log("Time taken by all promises: ", Date.now() - start);
+//   })
+//   .catch((err) => {
+//     console.log("Error occurred: ", err);
+//   });
+
+// Promise.any([p1, p2, p3])
+//   .then((data) => {
+//     console.log("First resolved promise: ", data);
+//     console.log("Time taken by all promises: ", Date.now() - start);
+//   })
+//   .catch((err) => {
+//     console.log("Time taken by all promises: ", Date.now() - start);
+//     console.log("Error occurred: ", err);
+//   });
+
+// let res = function normal() {
+//   return "I am normal function";
+// }
+
+// let p = new Promise((resolve, reject) => {
+//   resolve("I am promise");
+// });
+
+// async function api1() {
+//   return "I am normal function1";
+//   //   return p;
+// }
+// async function api2() {
+//   return "I am normal function2";
+//   //   return p;
+// }
+// console.log(res());
+// async function api() {
+//   //   return "I am normal function";
+//   //   return p;
+//   let data  = setTimeout(() => {
+//     return "I am normal function";
+//   }, 2000);
+//   return data;
+// }
+
+// async function getData() {
+//   let response = await api();
+//   console.log(response);
+
+// //   let res1 = await api1();
+// //   let res2 = await api2();
+// //   console.log(response, res1, res2);
+//   //   console.log(response);
+//   //   response.then((data) => {
+//   //     console.log(data);
+//   //   });
+// }
+// getData();
+//   let response = await api();
+//   let res1 = await api1();
+//   let res2 = await api2();
+//   console.log(response, res1, res2);
+// let start = Date.now();
+// let p = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("I am resolved");
+//   }, 3000);
+// });
+
+// let p1 = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve("I am resolved1");
+//     // console.log("Time taken: ", Date.now() - start);
+//   }, 4000);
+// });
+
+// async function getData() {
+//   let res = await p;
+//   console.log(res);
+//   //   p.then((data) => {
+//   //     console.log(data);
+//   //   });
+//   console.log("middle");
+//   let res1 = await p1;
+//   console.log(res1);
+//   console.log("End");
+//   //   p1.then((data) => {
+//   //     console.log(data);
+//   //   });
+// }
+// getData();
+
+// console.log("End");
