@@ -145,7 +145,7 @@ function evaluateFormula(formula) {
   }
   let expression = tokens.join(" ");
   return eval(expression);
-  console.log(tokens);
+  //   console.log(tokens);
 }
 
 formulaInput.addEventListener("keydown", (e) => {
@@ -177,3 +177,133 @@ cellsContainer.addEventListener(
   },
   true,
 );
+
+let aiBtn = document.querySelector("#ai");
+let aiModal = document.getElementById("aiModal");
+let closeBtn = document.querySelector(".close");
+let modalContent = document.querySelector(".modal-content");
+let submitBtn = document.getElementById("submitAI");
+let aiInput = document.getElementById("aiPrompt");
+let aiOutput = document.getElementById("aiOutput");
+let apiKey =
+  "put your openrouter.ai api key here";
+
+let aiMode = false;
+let modalOffsetX = 0;
+let modalOffsetY = 0;
+let isDragging = false;
+let selectedCells = new Set();
+let startCell = null;
+let startX = 0;
+let startY = 0;
+
+aiBtn.addEventListener("click", () => {
+  aiMode = !aiMode;
+  if (aiMode) {
+    aiModal.classList.add("open");
+  } else {
+    aiModal.classList.remove("open");
+  }
+});
+
+closeBtn.addEventListener("click", () => {
+  aiMode = false;
+  aiModal.classList.remove("open");
+});
+
+modalContent.addEventListener("mousedown", (e) => {
+  if (e.target.closest("textarea, button, .close")) return;
+  let rect = modalContent.getBoundingClientRect();
+  modalContent.style.transition = "none";
+  isDragging = true;
+  modalOffsetX = e.clientX - rect.left;
+  modalOffsetY = e.clientY - rect.top;
+  e.preventDefault();
+});
+
+modalContent.addEventListener("mousemove", (e) => {
+  if (!isDragging) return;
+  modalContent.style.left = e.clientX - modalOffsetX + "px";
+  modalContent.style.top = e.clientY - modalOffsetY + "px";
+});
+
+modalContent.addEventListener("mouseup", (e) => {
+  isDragging = false;
+});
+
+cellsContainer.addEventListener("mousedown", (e) => {
+  if (!aiMode) return;
+  startCell = e.target;
+  startX = e.clientX;
+  startY = e.clientY;
+});
+
+cellsContainer.addEventListener("mousemove", (e) => {
+  if (!aiMode || !startCell) return;
+  let moved =
+    Math.abs(e.clientX - startX) > 4 || Math.abs(e.clientY - startY) > 4;
+  if (!moved) return;
+  highlightSelectedCells(e.target);
+});
+
+function highlightSelectedCells(cell) {
+  selectedCells.add(cell);
+  cell.classList.add("ai-selected");
+}
+
+document.addEventListener("mouseup", (e) => {
+  //   console.log(selectedCells);
+  startCell = null;
+});
+
+submitBtn.addEventListener("click", async (e) => {
+  if (selectedCells.size === 0) {
+    alert("Please select some cells first.");
+  }
+  if (!aiInput.value.trim()) {
+    alert("Please enter a prompt for the AI.");
+  }
+  let cells = Array.from(selectedCells).map((cell) => {
+    let rid = Number(cell.getAttribute("rid"));
+    let cid = Number(cell.getAttribute("cid"));
+    let address = String.fromCharCode(65 + cid) + (rid + 1);
+    return { address, value: sheetDB[rid][cid].value };
+  });
+  //   console.log("Selected Cells:", cells);
+  let question = aiInput.value.trim();
+
+  let result = await processAIQuery(cells, question);
+  aiOutput.textContent = result;
+//   console.log("AI Result:", result);
+});
+
+async function processAIQuery(cells, question) {
+  console.log(cells);
+  let promptText = `Process these spreadsheet cells and answer the following question: ${question}\n\nCells:\n${cells
+    .map((cell) => {
+      return `Address: ${cell.address}, Value: ${cell.value}`;
+    })
+    .join("\n")}\n\n Respond with only the answer, no additional long text.`;
+
+  let response = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${apiKey}`,
+    },
+    body: JSON.stringify({
+      model: "gpt-4o-mini",
+      messages: [
+        {
+          role: "user",
+          content: promptText,
+        },
+      ],
+    }),
+  });
+  let data = await response.json();
+//   console.log("AI Response:", data);
+return data.choices[0].message.content.trim();
+
+  // console.log("Prompt sent to AI:", promptText);
+}
